@@ -201,6 +201,7 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.api.nvim_set_keymap("i", "<C-/>", [[copilot#Accept("<CR>")]], { expr = true, silent = true })
 vim.keymap.set("n", "<leader>lf", "<cmd>Format<CR>")
+vim.keymap.set("n", "<leader>gg", "<cmd>LazyGit<CR>")
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
