@@ -84,8 +84,9 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = true,
-        component_separators = '|',
+        -- component_separators = '|',
         section_separators = { left = '', right = '' },
+        component_separators = { left = '', right = '' }
       },
     },
   },
@@ -139,7 +140,7 @@ require('lazy').setup({
 -- See `:help vim.o`
 
 -- My Colorscheme
-vim.cmd.colorscheme("rose-pine")
+vim.cmd.colorscheme("tokyonight-night")
 
 -- Set highlight on search
 vim.o.hlsearch = false
@@ -172,7 +173,7 @@ vim.o.smartcase = true
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.softtabstop = 4
-
+vim.o.linespace = 4
 -- Keep signcolumn on by default
 vim.wo.signcolumn = 'yes'
 
@@ -252,7 +253,8 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'markdown', 'rust', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim' },
+  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'markdown', 'rust', 'python', 'rust', 'tsx', 'typescript', 'vimdoc',
+    'vim' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
   auto_install = true,
