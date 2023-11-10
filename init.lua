@@ -83,9 +83,8 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = true,
-        -- component_separators = '|',
-        section_separators = { left = '|', right = '|' },
-        component_separators = { left = '|', right = '|' }
+        section_separators = { left = '', right = '' },
+        component_separators = { left = '', right = '' }
       },
     },
   },
@@ -138,7 +137,7 @@ require('lazy').setup({
 -- See `:help vim.o`
 
 -- My Colorscheme
-vim.cmd.colorscheme("rose-pine")
+vim.cmd.colorscheme("onedark")
 
 -- Set highlight on search
 vim.o.hlsearch = false
