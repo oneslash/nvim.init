@@ -1,0 +1,2 @@
+return { 'navarasu/onedark.nvim', }
+
