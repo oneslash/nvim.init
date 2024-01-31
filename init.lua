@@ -1,6 +1,6 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-
+vim.g.netrw_banner = 0
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
 --    `:help lazy.nvim.txt` for more info
@@ -184,6 +184,8 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
+
+vim.opt.guicursor = ""
 
 -- [[ Basic Keymaps ]]
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
