@@ -201,7 +201,7 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 
 -- My Custom Keymaps
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-vim.api.nvim_set_keymap("i", "<C-`>", [[copilot#Accept("<CR>")]], { expr = true, silent = true })
+vim.api.nvim_set_keymap("i", "<C-.>", [[copilot#Accept("<CR>")]], { expr = true, silent = true })
 vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format)
 vim.keymap.set("n", "<leader>gg", "<cmd>LazyGit<CR>")
 vim.keymap.set("n", "<C-s>", ":w<CR>")
