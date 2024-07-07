@@ -34,7 +34,7 @@ require('lazy').setup({
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', opts = {} },
+      { 'j-hui/fidget.nvim',       opts = {} },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
@@ -89,16 +89,16 @@ require('lazy').setup({
     },
   },
 
-  {
-    -- Add indentation guides even on blank lines
-    'lukas-reineke/indent-blankline.nvim',
-    -- Enable `lukas-reineke/indent-blankline.nvim`
-    -- See `:help indent_blankline.txt`
-    main = 'ibl',
-    opts = {
-      scope = { enabled = false },
-    },
-  },
+  -- {
+  --   -- Add indentation guides even on blank lines
+  --   'lukas-reineke/indent-blankline.nvim',
+  --   -- Enable `lukas-reineke/indent-blankline.nvim`
+  --   -- See `:help indent_blankline.txt`
+  --   main = 'ibl',
+  --   opts = {
+  --     scope = { enabled = false },
+  --   },
+  -- },
 
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
@@ -136,7 +136,7 @@ require('lazy').setup({
 -- See `:help vim.o`
 
 -- My Colorscheme
-vim.cmd.colorscheme("rose-pine")
+vim.cmd.colorscheme("gruvsquirrel")
 
 -- Set highlight on search
 vim.o.hlsearch = false
@@ -198,7 +198,7 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 
 -- My Custom Keymaps
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-vim.api.nvim_set_keymap("i", "<C-.>", [[copilot#Accept("<CR>")]], { expr = true, silent = true })
+-- vim.api.nvim_set_keymap("i", "<C-.>", [[copilot#Accept("<CR>")]], { expr = true, silent = true })
 vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format)
 vim.keymap.set("n", "<leader>gg", "<cmd>LazyGit<CR>")
 vim.keymap.set("n", "<C-s>", ":w<CR>")
@@ -380,8 +380,10 @@ local servers = {
   -- pyright = {},
   rust_analyzer = {},
   tsserver = {},
-  html = { filetypes = { 'html', 'twig', 'hbs' } },
-
+  html = {
+    configurationSection = { 'html', 'css', 'javascript' },
+    embeddedLanguages = { css = true, javascript = true },
+  },
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
@@ -421,6 +423,7 @@ local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup {}
+luasnip.filetype_extend("htmldjango", {"html"})
 
 cmp.setup {
   snippet = {
