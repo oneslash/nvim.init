@@ -132,6 +132,18 @@ require('lazy').setup({
   { import = 'custom.plugins' },
 }, {})
 
+
+-- require('tabnine').setup({
+--   disable_auto_comment = true,
+--   accept_keymap = "<Tab>",
+--   dismiss_keymap = "<C-]>",
+--   debounce_ms = 800,
+--   suggestion_color = { gui = "#808080", cterm = 244 },
+--   exclude_filetypes = { "TelescopePrompt", "NvimTree" },
+--   log_file_path = nil, -- absolute path to Tabnine log file
+--   ignore_certificate_errors = false,
+-- });
+
 -- [[ Setting options ]]
 -- See `:help vim.o`
 
@@ -181,8 +193,6 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
-
-vim.opt.guicursor = ""
 
 -- [[ Basic Keymaps ]]
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -379,7 +389,6 @@ local servers = {
   gopls = {},
   -- pyright = {},
   rust_analyzer = {},
-  tsserver = {},
   html = {
     configurationSection = { 'html', 'css', 'javascript' },
     embeddedLanguages = { css = true, javascript = true },
@@ -423,7 +432,7 @@ local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup {}
-luasnip.filetype_extend("htmldjango", {"html"})
+luasnip.filetype_extend("htmldjango", { "html" })
 
 cmp.setup {
   snippet = {
