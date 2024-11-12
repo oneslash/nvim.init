@@ -148,7 +148,7 @@ require('lazy').setup({
 -- See `:help vim.o`
 
 -- My Colorscheme
-vim.cmd.colorscheme("gruvsquirrel")
+vim.cmd.colorscheme("rose-pine")
 
 -- Set highlight on search
 vim.o.hlsearch = false
