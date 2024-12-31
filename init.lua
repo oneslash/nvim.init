@@ -147,6 +147,23 @@ require('lazy').setup({
 -- [[ Setting options ]]
 -- See `:help vim.o`
 
+-- The configuration
+--
+-- local mylsp = {
+--   cmd = { '/Users/sardo/Projects/paris/target/debug/paris' },
+--   root_dir = vim.loop.cwd(),
+--   init_options = {},
+-- }
+--
+-- vim.api.nvim_create_autocmd("BufEnter", {
+--   callback = function(args)
+--     local bufnr = args.buf
+--     local client = vim.lsp.get_clients({ bufnr = bufnr, name = "mylsp" })
+--     if #client == 0 then
+--       vim.lsp.start(mylsp)
+--     end
+--   end,
+--, })
 -- My Colorscheme
 vim.cmd.colorscheme("rose-pine")
 
@@ -154,6 +171,7 @@ vim.cmd.colorscheme("rose-pine")
 vim.o.hlsearch = false
 
 -- GUI Cursor
+vim.opt.guicursor = ""
 vim.opt.relativenumber = true
 
 -- Make line numbers default
